@@ -1,0 +1,2 @@
+{% extends 'base.html' %}{% block content %}
+<div class="card"><h2>Book an Appointment</h2><form method="post"><label>Doctor<select name="doctor_id" required>{% for d in doctors %}<option value="{{ d.id }}">{{ d.name }} - {{ d.specialty }} ({{ d.availability }})</option>{% endfor %}</select></label><label>Date<input type="date" name="appointment_date" required></label><label>Time<input type="time" name="appointment_time" required></label><p>Appointment fee: £{{ '%.2f'|format(fee) }}</p><button>Continue to Payment</button></form></div>{% endblock %}

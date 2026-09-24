@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ABC Hospitals Online Appointment System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<nav>
+  <a href="{{ url_for('main.index') }}">ABC Hospitals</a>
+  <div>
+    {% if session.get('user_id') %}
+      {% if session.get('role') == 'admin' %}
+        <a href="{{ url_for('main.admin_dashboard') }}">Admin Dashboard</a>
+      {% else %}
+        <a href="{{ url_for('main.appointment') }}">Book Appointment</a>
+        <a href="{{ url_for('main.history') }}">Appointment History</a>
+      {% endif %}
+      <a href="{{ url_for('main.support') }}">Support</a>
+      <a href="{{ url_for('main.logout') }}">Logout</a>
+    {% else %}
+      <a href="{{ url_for('main.register') }}">Register</a>
+      <a href="{{ url_for('main.login') }}">Login</a>
+      <a href="{{ url_for('main.support') }}">Support</a>
+    {% endif %}
+  </div>
+</nav>
+<main>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}
+      <div class="flash {{ category }}">{{ message }}</div>
+    {% endfor %}
+  {% endwith %}
+  {% if home %}
+    <section class="hero">
+      <h1>Online Appointment System</h1>
+      <p>Register, log in, select a doctor, book an appointment and complete a simulated online payment.</p>
+      <a class="button" href="{{ url_for('main.register') }}">Get Started</a>
+    </section>
+  {% else %}
+    {% block content %}{% endblock %}
+  {% endif %}
+</main>
+<footer>ABC Group of Hospitals | Software Development Project</footer>
+</body>
+</html>

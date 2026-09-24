@@ -1,0 +1,2 @@
+{% extends 'base.html' %}{% block content %}
+<div class="card wide"><h2>Appointment History</h2>{% if appointments %}<table><tr><th>Doctor</th><th>Specialty</th><th>Date</th><th>Time</th><th>Status</th><th>Payment</th></tr>{% for a in appointments %}<tr><td>{{ a.doctor_name }}</td><td>{{ a.specialty }}</td><td>{{ a.appointment_date }}</td><td>{{ a.appointment_time }}</td><td>{{ a.status }}</td><td>{{ a.payment_status }}</td></tr>{% endfor %}</table>{% else %}<p>No appointments yet.</p>{% endif %}</div>{% endblock %}

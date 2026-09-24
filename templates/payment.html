@@ -1,0 +1,2 @@
+{% extends 'base.html' %}{% block content %}
+<div class="card"><h2>Online Payment</h2><p>Doctor: {{ appointment.doctor_name }}</p><p>Date: {{ appointment.appointment_date }} at {{ appointment.appointment_time }}</p><p>Amount: £{{ '%.2f'|format(fee) }}</p><form method="post"><label>Payment method<select name="method"><option>Card</option><option>UPI</option></select></label><button>Pay and Confirm</button></form></div>{% endblock %}
