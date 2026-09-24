@@ -1,38 +1,34 @@
-# ABC Group of Hospitals Online Appointment System
+# ABC Hospitals Online Appointment System
 
-A Flask-based implementation for the Week 9 Software Development Lifecycle activity. The project uses an Agile implementation approach, SQLite database storage, password hashing, validation, role-based access, appointment booking, simulated online payment, support requests, an admin dashboard, appointment history and pytest tests.
+A Flask-based online appointment system developed for ABC Group of Hospitals.
 
-## Core modules
-1. Patient Registration
-2. Patient Login
-3. Doctor Management
-4. Appointment Booking
-5. Online Payment (simulated for academic use)
-6. Customer Support
-7. Admin Dashboard
-8. Appointment History
+## Main Features
 
-## Run in PyCharm
-1. Open the `PythonProject1` folder in PyCharm.
-2. Create/select a Python virtual environment.
-3. Install packages from `requirements.txt`.
-4. Run `app.py`.
-5. Open the Flask URL shown in the PyCharm terminal.
+- Patient registration and login
+- Doctor management
+- Appointment booking
+- Online payment
+- Appointment history
+- Customer support
+- Administrator dashboard
+- SQLite database
+- Automated testing using pytest
 
-## Demo admin account
-- Email: `admin@abc-hospitals.com`
-- Password: `Admin@123`
+## Technologies
 
-Change the demo password before any real deployment. This project is for academic demonstration and the payment process is intentionally simulated.
+- Python
+- Flask
+- SQLite
+- HTML/CSS
+- pytest
 
-## Testing
-Run:
+## Project Structure
+
+The application contains Flask routes, database configuration, templates, static files and automated tests.
+
+## Running the Application
+
+Activate the virtual environment and run:
 
 ```bash
-pytest -q
-```
-
-The tests cover registration/login, invalid login, role protection, appointment booking, duplicate slot rejection, payment confirmation, support submission and doctor management.
-
-## Git and progress documentation
-The project is structured for Git version control. `DEVELOPMENT_LOG.md` records implementation stages and the `.git` folder contains local commit history. Push the repository to GitHub from PyCharm for the required GitHub evidence.
+python app.py
